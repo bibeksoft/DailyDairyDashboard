@@ -1,0 +1,7 @@
+<div class="container">
+<div><img src="favicon.ico" class="img-responsive" style="position: absolute;"> <h2 style="padding-left: 2vw;"> Blind Game</h2></div>
+<hr>
+<button class="btn btn-info" (click)="onAddBtnClicked()">Add to Player</button>
+</div>
+<app-player-list  id="myModal"  *ngIf="isAddBtn"></app-player-list>
+

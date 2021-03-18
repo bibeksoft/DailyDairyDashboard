@@ -1,0 +1,46 @@
+ <!-- Modal -->
+    <div class="modal-dialog " *ngIf="!iSClose">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">New Player</h4>
+        </div>
+        <div class="modal-body">
+            <div class="input-sm">
+               
+              <input type="text" class="playerlabel" value="{{playId}}"  disabled>
+            </div>
+        
+            <div class="input-sm">
+            <input type="text" class="playerName from-control" placeholder="Name"  [(ngModel)]="playerName">
+          </div>
+          <div class="input-sm">
+              <span></span>
+              <input type="Number" class="playerAge from-control" placeholder="Age" [(ngModel)]="playerAge" maxlength="2" max="99"
+              min="18">
+            </div>
+
+            <div class="input-sm">
+            <select name="catagory" id="ctglist" class="from-control" [(ngModel)]="playerCatogry">
+              <option *ngFor="let list of optionList" [value]="list.value" [disabled]="list.type=='Select'">{{list.type}}</option>
+         </select>
+        </div>
+      
+        <div class="modal-footer">
+          <button id="addList" class="btn btn-success" [disabled]="playerName === '' " (click)="onAddList()">Add</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="onCloseModel()">Close</button>
+        </div>
+        <div class="footer">
+        <ul class="list-group" *ngIf="isList">
+          <h4 class="list-group-item active">Player List</h4>
+          <li class="Name list-group-item">Id:{{playId}}</li>
+          <li class="Name list-group-item">Name:{{playerName}}</li>
+          <li class="Name list-group-item">Age:{{playerAge}}</li>
+          <li class="Name list-group-item">PlayerType:{{playerCatogry}}</li>
+        </ul>  
+        </div>
+
+      </div>
+      
+    </div>
+  
